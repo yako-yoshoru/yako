@@ -441,6 +441,18 @@ header h3 {
     display: block;
 }
 
+.narative {
+    font-family: "Agrandir-Regular";
+    color: white;
+    font-size: 10px;
+
+    position: absolute;
+    right: 20px;
+    opacity: 0;
+
+    transition: opacity 0.3s ease-in-out;
+}
+
 .desktop-nav ul {
     display: flex;
     list-style: none;
@@ -462,6 +474,10 @@ header h3 {
 
 .desktop-nav a:hover {
     color: var(--crimson-dark);
+}
+
+.desktop-nav:has(a:hover) + .narative {
+    opacity: 1;
 }
 
 .desktop-nav a:hover ~ header {

@@ -17,6 +17,8 @@ const floatingText = document.createElement('p');
 
 const logoChanging = document.querySelector(".imgChanging");
 
+const narative = document.querySelector('.narative');
+
 floatingText.textContent = 'Click to go to the Website.';
 floatingText.style.position = 'fixed';
 floatingText.style.pointerEvents = 'none';
@@ -103,6 +105,15 @@ navLinkItems.forEach(link => {
     });
 });
 // - to this.. rest i used them as a tool
+
+navLinks.forEach(link => {
+	link.addEventListener('mouseenter', () => {
+		narative.style.opacity = '1';
+	});
+	link.addEventListener('mouseleave', () => {
+		narative.style.opacity = '0';
+	});
+});
 
 /*btn.addEventListener('click', () => {
 	const elementPosition = portfolio.getBoundingClientRect().top + window.pageYOffset;
