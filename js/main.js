@@ -73,7 +73,38 @@ function randomFont() {
 	title.style.fontFamily = randomFont;
 }
 
-btn.addEventListener('click', () => {
+//DropDown Fixed - AI helps me with this
+const containerBtn = document.querySelector('.container-button');
+containerBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    const elementPosition = portfolio.getBoundingClientRect().top + window.pageYOffset;
+    const offsetPosition = elementPosition - (window.innerHeight / 2) + (portfolio.offsetHeight / 2);
+    window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+    });
+});
+
+const navLinkItems = document.querySelectorAll('.desktop-nav a, .dropdown-content a');
+navLinkItems.forEach(link => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetId = link.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        
+        if (targetElement) {
+            const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+            const offsetPosition = elementPosition - 80; // adjust for header height
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
+        }
+    });
+});
+// - to this.. rest i used them as a tool
+
+/*btn.addEventListener('click', () => {
 	const elementPosition = portfolio.getBoundingClientRect().top + window.pageYOffset;
 	const offsetPosition = elementPosition - (window.innerHeight / 2) + (portfolio.offsetHeight / 2);
 
@@ -81,7 +112,7 @@ btn.addEventListener('click', () => {
 		top: offsetPosition,
 		behavior: 'smooth'
 	});
-});
+});*/
 
 /*document.addEventListener('contextmenu', (e) => {
 	e.preventDefault();
