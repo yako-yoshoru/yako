@@ -603,7 +603,7 @@ header h3 {
     gap: 300px;
     justify-content: center;
 
-    animation: moveRight 15s linear infinite;
+    /*animation: moveRight 15s linear infinite;*/
 }
 
 .studios img {
@@ -613,11 +613,11 @@ header h3 {
     margin-right: 5px;
 }
 
-@keyframes moveRight {
+/*@keyframes moveRight {
 	from {
 		transform: translateX(-100%);
 	}
 	to {
 		transform: translateX(150vw);
 	}
-}
+}*/

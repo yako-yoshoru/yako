@@ -1,4 +1,5 @@
 let hoverCount = 0;
+let imgIndex = 0;
 
 const btn = document.querySelector(".imgHeader");
 const menu = document.querySelector(".dropdown-content");
@@ -14,6 +15,8 @@ const cards = document.querySelectorAll('.photo-1');
 const specificLinks = document.querySelectorAll('.hovering-a');
 const floatingText = document.createElement('p');
 
+const logoChanging = document.querySelector(".imgChanging");
+
 floatingText.textContent = 'Click to go to the Website.';
 floatingText.style.position = 'fixed';
 floatingText.style.pointerEvents = 'none';
@@ -25,6 +28,12 @@ floatingText.style.opacity = '0';
 floatingText.style.transition = 'opacity 0.2s';
 floatingText.style.color = 'white';
 document.body.appendChild(floatingText);
+
+const images = [
+	"assets/logo1.png",
+	"assets/logo3.png",
+	"assets/logo4.png"
+];
 
 specificLinks.forEach(specificLink => {
     specificLink.addEventListener('mouseenter', (e) => {
@@ -128,3 +137,9 @@ window.addEventListener('load', applyCardColors);
 });*/
 
 //setInterval(randomFont, Math.random() * 80 + 50);
+
+
+setInterval(() => {
+    imgIndex = (imgIndex + 1) % images.length;
+    logoChanging.src = images[imgIndex];
+}, 1000);
