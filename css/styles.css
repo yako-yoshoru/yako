@@ -188,6 +188,7 @@ header {
     background: rgba(20, 20, 31, 0.5);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 50px 950px #cc51633d;
     padding: 0 20px;
     min-height: 60px;
     font-size: 20px;
@@ -453,6 +454,19 @@ header h3 {
     transition: opacity 0.3s ease-in-out;
 }
 
+.narative-mobile {
+    font-family: "Agrandir-Regular";
+    color: white;
+    font-size: 7px;
+
+    position: absolute;
+    right: 20px;
+    top: 5.9rem;
+    opacity: 0;
+
+    transition: opacity 0.3s ease-in-out;
+}
+
 .desktop-nav ul {
     display: flex;
     list-style: none;
@@ -524,7 +538,7 @@ header h3 {
     }
 
     body {
-        font-size: 14px;
+        font-size: 10px;
     }
 
     .studios img {
@@ -533,6 +547,10 @@ header h3 {
 
     .photo-1 {
         width: 200px;
+    }
+
+    .mobile-dropdown:hover .narative-mobile {
+        opacity: 1;
     }
 }
 
